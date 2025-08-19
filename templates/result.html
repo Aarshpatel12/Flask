@@ -5,6 +5,13 @@
 </head>
 <body>
     <h2>Final Results</h2>
-    <p>The output is {{result}}</p>
+    <table border="2">
+        {% for key, value in result.items() %}
+        <tr>
+            <th>{{ key }}</th>   <!-- heading column -->
+            <td>{{ value }}</td> <!-- data column -->
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

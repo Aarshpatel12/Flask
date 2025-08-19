@@ -11,22 +11,20 @@ def welcome():
 
 @app.route("/success/<int:score>")
 def success(score):
-  res=""
-  if score>=50:
+  if score>50:
     res="PASS"
   else:
     res="FAIL"
-  return render_template("result.html",result=res)
+  exp={'score':score,'res':res}
+  return render_template("result.html",result=exp)
 
 
 @app.route("/fail/<int:score>")
 def fail(score):
-  res=""
-  if score>=50:
-    res="PASS"
-  else:
-    res="FAIL"
-  return render_template("result.html",result=res)
+    exp = {"score": score, "res": "FAIL"}
+    return render_template("result.html", result=exp)
+
+
 
 ##Result checker
 @app.route("/result/<int:marks>")
