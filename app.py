@@ -1,29 +1,29 @@
-from flask import Flask,redirect,url_for
+# from flask import Flask,redirect,url_for,render_template
 
-app=Flask(__name__)
+# app=Flask(__name__)
 
-@app.route("/")
-def welcome():
-  return"welcome" 
+# @app.route("/")
+# def welcome():
+#   return render_template("index.html")
 
-@app.route("/success/<int:score>")
-def success(score):
-  return"success"+str(score)
+# @app.route("/success/<int:score>")
+# def success(score):
+#   return"success"+str(score)
 
-@app.route("/fail/<int:score>")
-def fail(score):
-  return"fail"+str(score)
+# @app.route("/fail/<int:score>")
+# def fail(score):
+#   return"fail"+str(score)
 
-##Result checker
-@app.route("/result/<int:marks>")
-def result(marks):
-  result=""
-  if marks<50:
-    result="fail"
-  else:
-    result="success"
-  return redirect(url_for(result,score=marks))
+# ##Result checker
+# @app.route("/result/<int:marks>")
+# def result(marks):
+#   result=""
+#   if marks<50:
+#     result="fail"
+#   else:
+#     result="success"
+#   return redirect(url_for(result,score=marks))
 
 
-if __name__=="__main__":
-  app.run(debug=True)
+# if __name__=="__main__":
+#   app.run(debug=True)
